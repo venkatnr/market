@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag('fonts-min','tabview')%>
+<%= javascript_include_tag('yahoo-dom-event', 'element-min','tabview-min')%>
+<% male = [] %> 
+<% female =[] %>
+<% @products.each do |attribute| %>
+			  <% if attribute.sex == "male" %>	      
+					<% male<<attribute %>
+			   <% end %>
+			   <% if attribute.sex  == "female" %>
+					<% female << attribute %>
+			  <% end %>
+<% end %>
+<br>
+<% i=0 %>
+<% j=0 %>
+<% male.each do |eachrecord|%>
+<% i = i+1%>
+<%end %>
+<% female.each do |eachrecord|%>
+<% j = j+1%>
+<%end %>
+<br>
+<style>
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+</style>
+
+</head>
+<body class="yui-skin-sam">
+<div class="exampleIntro">			
+</div>
+<div id="demo" class="yui-navset">
+    <ul class="yui-nav">
+        <li class="selected"><a href="#tab1"><em>MEN</em></a></li>
+        <li ><a href="#tab2"><em>WOMEN</em></a></li>
+        <li><a href="#tab3"><em>KIDS</em></a></li>
+    </ul>            
+    <div class="yui-content">
+        <div id="tab1"><p>Male(<%= i%>)<br></p></div>
+        <div id="tab2"><p>Female(<%= j%>)</p></div>
+        <div id="tab3"><p>Tab Three Content</p></div>
+    </div>
+</div>
+<script>
+(function() {
+    var tabView = new YAHOO.widget.TabView('demo');
+
+    YAHOO.log("The example has finished loading; as you interact with it, you'll see log messages appearing here.", "info", "example");
+})();
+</script>
+</body>
+
+

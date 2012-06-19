@@ -4,6 +4,10 @@ before_filter :authenticate_admin!, :except => [:index]
 
   # GET /products
   # GET /products.json
+  def mainpage
+	  @products = Product.all
+  end
+  
   def index
     @products = Product.all
 
@@ -56,6 +60,7 @@ before_filter :authenticate_admin!, :except => [:index]
     end
   end
 
+ 
   # PUT /products/1
   # PUT /products/1.json
   def update

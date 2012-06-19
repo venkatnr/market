@@ -1,5 +1,9 @@
 Market::Application.routes.draw do
-  resources :products
+  resources :products do
+	collection do
+		get 'mainpage'
+	end
+  end
 
   devise_for :admins
 
