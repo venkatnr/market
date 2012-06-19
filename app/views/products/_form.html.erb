@@ -1,0 +1,41 @@
+<%= form_for @product, :html => { :multipart => true } do |f| %>
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.radio_button  :sex, "male" %> Male
+    <%= f.radio_button  :sex, "female" %> Female
+  </div>
+  <div class="field">
+    <%= f.label :age_limit %><br />
+    <%= f.radio_button  :age_limit, "kid" %> Kid
+    <%= f.radio_button  :age_limit, "young" %> Young
+    <%= f.radio_button  :age_limit, "old" %> Old
+  </div>
+  <div class="field">
+    <%= f.label :product_type %><br />
+    <%= f.radio_button  :product_type, "pants" %> Pants
+    <%= f.radio_button  :product_type, "shirts" %> Shirts
+    <%= f.radio_button  :product_type, "bags" %> bags
+  </div>
+  <div class="field">
+    <%= f.label :product_name %><br />
+    <%= f.text_field :product_name %>
+  </div>
+  <div class="field">
+    <%= f.label :product_price %><br />
+    <%= f.number_field :product_price %>
+  </div>
+  <div class="field">
+    <%= f.label :product_size %><br />
+	<%= f.radio_button  :product_size, "10" %> 10
+	<%= f.radio_button  :product_size, "20" %> 20
+	<%= f.radio_button  :product_size, "30" %> 30
+	<%= f.radio_button  :product_size, "40" %> 40
+	<%= f.radio_button  :product_size, "50" %> 50
+  </div>
+  <div>
+   Upload image:  <%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

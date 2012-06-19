@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sex:</b>
+  <%= @product.sex %>
+</p>
+
+<p>
+  <b>Age limit:</b>
+  <%= @product.age_limit %>
+</p>
+
+<p>
+  <b>Product type:</b>
+  <%= @product.product_type %>
+</p>
+
+<p>
+  <b>Product name:</b>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <b>Product price:</b>
+  <%= @product.product_price %>
+</p>
+
+<p>
+  <b>Product size:</b>
+  <%= @product.product_size %>
+</p>
+<p>
+<%= image_tag @product.photo.url(:small) %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
